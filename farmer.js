@@ -34,6 +34,10 @@ function openScreen() {
     })
 }
 
+function countDown(seconds) {
+
+}
+
 function wait(seconds) {
     return new Promise((res) => setInterval(res, seconds * 1000))
 }
@@ -192,11 +196,12 @@ const game = {
             if(choice == 1) {
                 tree.water();
             } else if(choice == 2) {
+                console.log("Reaching to pick fruits")
                 if(tree.fruitNumber < 1) console.log("there are no fruits to pick")
-                if(tree.stage == "unripe fruit") {
+                if(tree.stage == "unripe fruits") {
                     const fruitNum = tree.pickFruit();
                     console.log(`You picked ${fruitNum} fruits, and lost a tooth trying to taste one. You tossed the unripe fruits into the compost`);
-                } else if (tree.stage == "ripe fruit") {
+                } else if (tree.stage == "ripe fruits") {
                     this.fruits += tree.pickFruit();
                     if(this.fruits > 100 && !this.achivements.includes("Fruit Ninja")) {
                         this.achivements.push("Fruit Ninja");
