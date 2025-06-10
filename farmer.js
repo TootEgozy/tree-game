@@ -34,9 +34,6 @@ function openScreen() {
     })
 }
 
-function countDown(seconds) {
-
-}
 
 function wait(seconds) {
     return new Promise((res) => setInterval(res, seconds * 1000))
@@ -237,6 +234,7 @@ const game = {
                 this.stop();
                 this.exit();
             }
+            tree.check();
         }
     }
 }
